@@ -4,7 +4,7 @@
 int main(int argc,char* argv[])
 {
     int pid;
-
+    int status;
     int pipe1[2];
     int pipe2[2];
 
@@ -43,7 +43,7 @@ int main(int argc,char* argv[])
         
         write(pipe2[1],"ping",20);
         close(pipe2[1]);
-
+        wait(&status);
         fatherpid = getpid();
         
         
