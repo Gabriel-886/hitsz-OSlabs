@@ -38,6 +38,8 @@ operating system for MIT's 6.S081, so we are more interested in
 simplifications and clarifications than new features.
 
 BUILDING AND RUNNING XV6
+哈尔滨工业大学（深圳）操作系统实验
+23.9.19 完成第一次实验 完善了pingpong.c,find.c,sleep.c以及启动流程的小更改
 
 You will need a RISC-V "newlib" tool chain from
 https://github.com/riscv/riscv-gnu-toolchain, and qemu compiled for
