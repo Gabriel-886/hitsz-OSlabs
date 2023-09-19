@@ -22,13 +22,13 @@ int main(int argc,char* argv[])
         close (pipe1[0]);
         char childchar[10];
 
-        read(pipe2[0],childchar,1);
+        read(pipe2[0],childchar,20);
         childpid = getpid();
-        printf("%d: received ping\n",childpid);
+        printf("%d: received %s\n",childpid,childchar);
          //关闭读端
         close(pipe2[0]);
         
-        write(pipe1[1],"a",2);
+        write(pipe1[1],"pong",100);
         close(pipe1[1]);
         
     }
@@ -41,14 +41,14 @@ int main(int argc,char* argv[])
         close (pipe1[1]);
         char fatherchar[10];
         
-        write(pipe2[1],"a",2);
+        write(pipe2[1],"ping",20);
         close(pipe2[1]);
 
         fatherpid = getpid();
         
-         //关闭读端
-        read(pipe1[0],fatherchar,1);
-        printf("%d: received pong\n",fatherpid);
+        
+        read(pipe1[0],fatherchar,100);
+        printf("%d: received %s\n",fatherpid,fatherchar);
         close (pipe1[0]);
         
         
