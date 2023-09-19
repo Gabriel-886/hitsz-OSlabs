@@ -18,6 +18,7 @@ extern void timervec();
 
 // entry.S jumps here in machine mode on stack0.
 void start() {
+  
   // set M Previous Privilege mode to Supervisor, for mret.
   unsigned long x = r_mstatus();
   x &= ~MSTATUS_MPP_MASK;
@@ -52,8 +53,9 @@ void start() {
     // init uart and printf
     consoleinit();
     printfinit();
+    printf("[210810201] in start,init driver,interrupts and change mode\n");
   }
-
+  
   // switch to supervisor mode and jump to main().
   asm volatile("mret");
 }

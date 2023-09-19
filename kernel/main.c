@@ -10,7 +10,7 @@ volatile static int started = 0;
 void main() {
   if (cpuid() == 0) {
     // consoleinit();
-    // printfinit();
+    printf("[210810201] enter main, init kernel\n");
     printf("\n");
     printf("xv6 kernel is booting\n");
     printf("\n");
